@@ -1,0 +1,12 @@
+$ python --version
+Python 3.10.19
+
+$ mkdir -p logs
+
+$ ls vm-paging
+README.md
+paging-linear-translate.py
+
+$ ls vm-segmentation
+README.md
+segmentation.py

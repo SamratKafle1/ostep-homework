@@ -1,0 +1,22 @@
+## Segmentation Task 3 — No Valid Addresses Scenario
+$ (cd vm-segmentation && python segmentation.py -a 128 -p 512 -b 0 -l 0 -B 512 -L 0 -A 0,10,63,64,100,127 -c)
+ARG seed 0
+ARG address space size 128
+ARG phys mem size 512
+
+Segment register information:
+
+  Segment 0 base  (grows positive) : 0x00000000 (decimal 0)
+  Segment 0 limit                  : 0
+
+  Segment 1 base  (grows negative) : 0x00000200 (decimal 512)
+  Segment 1 limit                  : 0
+
+Virtual Address Trace
+  VA  0: 0x00000000 (decimal:    0) --> SEGMENTATION VIOLATION (SEG0)
+  VA  1: 0x0000000a (decimal:   10) --> SEGMENTATION VIOLATION (SEG0)
+  VA  2: 0x0000003f (decimal:   63) --> SEGMENTATION VIOLATION (SEG0)
+  VA  3: 0x00000040 (decimal:   64) --> SEGMENTATION VIOLATION (SEG1)
+  VA  4: 0x00000064 (decimal:  100) --> SEGMENTATION VIOLATION (SEG1)
+  VA  5: 0x0000007f (decimal:  127) --> SEGMENTATION VIOLATION (SEG1)
+
